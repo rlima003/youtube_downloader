@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block begin %}
+
+    {% if start %}
+     <h2 style="color: white; text-align: center; padding-top: 50px; padding-bottom: 10px">Sign in</h2>
+    <form method="Post" action="/" style="text-align: center">
+
+        <input type="email"  style="margin: 0 auto; text-align: center" class="form-control form-control-lg mb-4 w-50" name='email' placeholder="name@example.com">
+
+        <input type="password" style="margin: 0 auto; text-align: center" class="form-control form-control-lg mb-4 w-50" name="passwd" placeholder="password">
+
+        <input type ="submit" style="text-align: center" class="btn btn-primary btn-lg" value="log in">
+
+    </form>
+
+    {% else %}
+        <h2 style="color: white; text-align: center; padding-top: 50px; padding-bottom: 10px">Paste The Link Below</h2>
+        <form method="Post" action="/" style="text-align: center">
+        <input type="text" style="margin: 0 auto; text-align: center" class="form-control-lg form-control mb-4 w-50" id="exampleFormControlInput1" name="link" placeholder="Youtube Link">
+        <input type ="submit" style="text-align: center" class="btn btn-lg" value="download">
+        </form>
+       <div class="row justify-content-center">
+        <div class="col-lg-4">
+            {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-danger alert-dismissible fade show mt-5" role="alert" style="text-align: center">
+                {{message}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+                {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+          </div>
+
+
+    {% endif %}
+{% endblock %}
+
+
