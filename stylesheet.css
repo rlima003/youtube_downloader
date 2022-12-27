@@ -1,0 +1,13 @@
+.btn {
+   background-image: radial-gradient(circle, #000428, #031a40, #062a5a, #073b75, #004e92);;
+    color: white;
+}
+.btn:hover{
+    color: red;
+}
+
+#black {
+    background-image: radial-gradient(circle, #3a6186, #404562, #362d3e, #22191f, #000000);;
+}
+
+
